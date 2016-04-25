@@ -35,6 +35,7 @@ def load_image(name, colorkey=None):
     return image, image.get_rect()
 
 def load_sound(name):
+
     class NoneSound:
         def play(self): pass
     if not pygame.mixer or not pygame.mixer.get_init():
@@ -49,56 +50,148 @@ def load_sound(name):
 
 
 #classes for our game objects
+class Kunai(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.image, self.rect = load_image('Kunai.png')
+        self.default = self.rect
+        self.newpos = 0
+        self.direction = 0
+        self.speed = 10
+        self.initial = 0
+        self.active = 0
+        screen = pygame.display.get_surface()
+        self.area = screen.get_rect()
+
+    def update(self):
+        if self.active:
+            self._throw()
+
+    def _throw(self):
+        self.image, self.rect = load_image('Kunai.png')
+        self.rect = self.newpos
+        self.newpos = self.rect.move((self.speed, 0))
+        if self.rect.left < -70 or self.rect.right > self.area.right + 70:
+            self.active = 0
+            if self.direction:
+                self.speed = -self.speed
+                self.direction = 0
+        if self.direction:
+            self.image = pygame.transform.flip(self.image, 1, 0)
+            if self.initial:
+                self.newpos = self.rect.move((-80, 0))
+                self.initial = 0
+
+        self.rect = self.newpos
+
+
 
 class Ninja(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.ani_speed = 5
         self.idle = []
-        self.idle.append(load_image('ninja/idle/Idle__000.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__001.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__002.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__003.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__004.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__005.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__006.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__007.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__008.png', -1))
-        self.idle.append(load_image('ninja/idle/Idle__009.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__000.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__001.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__002.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__003.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__004.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__005.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__006.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__007.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__008.png', -1))
+        self.idle.append(load_image('ninja/right/idle/Idle__009.png', -1))
 
         self.running = []
-        self.running.append(load_image('ninja/running/Run__000.png', -1))
-        self.running.append(load_image('ninja/running/Run__001.png', -1))
-        self.running.append(load_image('ninja/running/Run__002.png', -1))
-        self.running.append(load_image('ninja/running/Run__003.png', -1))
-        self.running.append(load_image('ninja/running/Run__004.png', -1))
-        self.running.append(load_image('ninja/running/Run__005.png', -1))
-        self.running.append(load_image('ninja/running/Run__006.png', -1))
-        self.running.append(load_image('ninja/running/Run__007.png', -1))
-        self.running.append(load_image('ninja/running/Run__008.png', -1))
-        self.running.append(load_image('ninja/running/Run__009.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__000.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__001.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__002.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__003.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__004.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__005.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__006.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__007.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__008.png', -1))
+        self.running.append(load_image('ninja/right/running/Run__009.png', -1))
 
         self.dying = []
-        self.dying.append(load_image('ninja/dead/Dead__000.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__001.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__002.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__003.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__004.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__005.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__006.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__007.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__008.png', -1))
-        self.dying.append(load_image('ninja/dead/Dead__009.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__000.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__001.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__002.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__003.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__004.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__005.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__006.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__007.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__008.png', -1))
+        self.dying.append(load_image('ninja/right/dead/Dead__009.png', -1))
+
+        self.attacking = []
+        self.attacking.append(load_image('ninja/right/attack/Attack__000.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__001.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__002.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__003.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__004.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__005.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__006.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__007.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__008.png', -1))
+        self.attacking.append(load_image('ninja/right/attack/Attack__009.png', -1))
+
+        self.l_attacking = []
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__000.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__001.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__002.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__003.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__004.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__005.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__006.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__007.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__008.png', -1))
+        self.l_attacking.append(load_image('ninja/left/attack/Attack__009.png', -1))
+
+        self.jumping = []
+        self.jumping.append(load_image('ninja/right/jumping/Jump__000.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__001.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__002.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__003.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__004.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__005.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__006.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__007.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__008.png', -1))
+        self.jumping.append(load_image('ninja/right/jumping/Jump__009.png', -1))
+
+        self.throwing = []
+        self.throwing.append(load_image('ninja/right/throwing/Throw__000.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__001.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__002.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__003.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__004.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__005.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__006.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__007.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__008.png', -1))
+        self.throwing.append(load_image('ninja/right/throwing/Throw__009.png', -1))
 
         self.index = 0
-        self.move = 9
+        self.move = 5
+        self.jump_y = 8
+        self.jump_height = 10
+        #States
+        self.moving = 0
+        self.attacked = 0
+        self.thrown = 0
+        self.punched = 0
+        self.dead = 0
+        self.jumped = 0
+        self.direction = 0
+        self.initial = 0
+        screen = pygame.display.get_surface()
+        self.area = screen.get_rect()
         self.image, self.rect = self.idle[self.index]
         self.rect = self.rect.move((500, 300))
         self.newpos = self.rect
-        self.moving = 0
-        self.punched = 0
-        self.dead = 0
-        self.direction = 0
 
     def update(self):
         if self.dead:
@@ -108,6 +201,12 @@ class Ninja(pygame.sprite.Sprite):
                 self.image = pygame.transform.flip(self.image, 1, 0)
         elif self.punched:
             self._dead()
+        elif self.attacked:
+            self.attack()
+        elif self.thrown:
+            self.throw()
+        elif self.jumped:
+            self.jump()
         elif self.moving:
             self._run()
         else:
@@ -125,19 +224,79 @@ class Ninja(pygame.sprite.Sprite):
             if self.direction:
                 self.image = pygame.transform.flip(self.image, 1, 0)
 
-    def _run(self):
+    def throw(self):
         self.ani_speed -= 1
-        self.newpos = self.rect.move((self.move, 0))
+        if self.ani_speed == 0:
+            self.ani_speed = 2
+            if self.index < len(self.throwing):
+                self.image, self.rect = self.throwing[self.index]
+                self.rect = self.newpos
+                self.index += 1
+                if self.direction:
+                    self.image = pygame.transform.flip(self.image, 1, 0)
+                    self.rect = self.rect.move((-40, 0))
+            else:
+                self.thrown = 0
+
+    def _run(self):
+        if self.rect.left < 0 or self.rect.right > self.area.right:
+            self.moving = 0
+            if self.rect.left < 0:
+                self.rect.left = 10
+            else:
+                self.rect.right = self.area.right - 10
+
+        else:
+            self.ani_speed -= 1
+            self.newpos = self.rect.move((self.move, 0))
+            if self.ani_speed == 0:
+                self.ani_speed = 5
+                self.index += 1
+                if self.index >= len(self.running):
+                    self.index = 0
+                self.image, self.rect = self.running[self.index]
+                if self.direction:
+                    self.image = pygame.transform.flip(self.image, 1, 0)
+
+            self.rect = self.newpos
+
+    def jump(self):
+        self.ani_speed -= 1
+        if self.rect.left < 0 or self.rect.right > self.area.right:
+            self.moving = 0
+            if self.rect.left < 0:
+                self.rect.left = 10
+            else:
+                self.rect.right = self.area.right - 10
+
+        self.newpos = self.rect.move((0, -self.jump_y))
+        if self.moving:
+            self.newpos = self.rect.move((self.move, -self.jump_y))
+
         if self.ani_speed == 0:
             self.ani_speed = 5
-            self.index += 1
-            if self.index >= len(self.running):
-                self.index = 0
-            self.image, self.rect = self.running[self.index]
-            if self.direction:
-                self.image = pygame.transform.flip(self.image, 1, 0)
+
+            #falling, start moving down
+            if self.index > 3 and self.initial:
+                self.jump_y = -self.jump_y
+                self.initial = 0
+
+            if self.index < len(self.jumping) - 1:
+                self.image, self.rect = self.jumping[self.index]
+                self.index += 1
+                if self.direction:
+                    self.image = pygame.transform.flip(self.image, 1, 0)
+            #done jumping
+            else:
+                self.image, self.rect = self.jumping[self.index]
+                if self.direction:
+                    self.image = pygame.transform.flip(self.image, 1, 0)
+                self.jump_y = -self.jump_y
+                self.jumped = 0
+
 
         self.rect = self.newpos
+
 
     def punch(self):
         self.punched = 1
@@ -156,6 +315,27 @@ class Ninja(pygame.sprite.Sprite):
             self.rect = self.newpos
             if self.direction:
                 self.image = pygame.transform.flip(self.image, 1, 0)
+
+    def attack(self):
+        self.ani_speed -= 1
+        if self.ani_speed == 0:
+            self.ani_speed = 2
+            if self.index < len(self.attacking):
+                self.image, self.rect = self.attacking[self.index]
+                self.rect = self.newpos
+                self.index += 1
+                if self.direction:
+                    self.image = pygame.transform.flip(self.image, 1, 0)
+                    self.rect = self.rect.move((-60, 0))
+            else:
+                self.attacked = 0
+
+
+    def get_pos(self):
+        return self.newpos
+
+    def get_dir(self):
+        return self.direction
 
 class Asteroid(pygame.sprite.Sprite):
     def __init__(self):
@@ -307,21 +487,26 @@ def main():
     screen.blit(background, (0, 0))
     pygame.display.flip()
 
+#Create Environment
+
+
 #Prepare Game Objects
     clock = pygame.time.Clock()
     whiff_sound = load_sound('whiff.wav')
     punch_sound = load_sound('punch.wav')
+    attack_sound = load_sound('Whoosh_Rod_Pole_022.wav')
     chimp = Chimp()
     asteroid = Asteroid()
     ninja = Ninja()
     fist = Fist()
-    allsprites = pygame.sprite.RenderPlain((chimp, asteroid, ninja, fist))
+    kunai = Kunai()
+    allsprites = pygame.sprite.RenderPlain((chimp, asteroid, ninja, fist, kunai))
 
 
 #Main Loop
     going = True
     while going:
-        clock.tick(60)
+        clock.tick(100)
 
         #Handle Input Events
         for event in pygame.event.get():
@@ -336,7 +521,10 @@ def main():
                         ninja.move = -ninja.move
                     ninja.direction = 0
             elif event.type == KEYUP and event.key == K_RIGHT:
-                ninja.moving = 0
+                if ninja.moving and ninja.direction == 1:
+                    ninja.moving = 1
+                else:
+                    ninja.moving = 0
 
             elif event.type == KEYDOWN and event.key == K_LEFT:
                 if not ninja.dead:
@@ -346,7 +534,42 @@ def main():
                     ninja.direction = 1
 
             elif event.type == KEYUP and event.key == K_LEFT:
-                ninja.moving = 0
+                if ninja.moving and ninja.direction == 0:
+                    ninja.moving = 1
+                else:
+                    ninja.moving = 0
+
+            elif event.type == KEYDOWN and event.key == K_SPACE:
+                if not ninja.dead:
+                    if not ninja.attacked and not ninja.jumped:
+                        ninja.ani_speed = 5
+                        ninja.initial = 1
+                        ninja.jumped = 1
+                        ninja.jump()
+                        ninja.index = 0
+
+            elif event.type == KEYDOWN and event.key == K_a:
+                if not ninja.dead:
+                    if not ninja.attacked and not ninja.jumped and not ninja.thrown:
+                        ninja.attacked = 1
+                        ninja.attack()
+                        attack_sound.play()
+                        ninja.index = 0
+
+            elif event.type == KEYDOWN and event.key == K_s:
+                if not ninja.dead:
+                    if not ninja.thrown and not kunai.active and not ninja.jumped and not ninja.attacked:
+                        kunai.rect = kunai.default
+                        ninja.thrown = 1
+                        ninja.throw()
+                        attack_sound.play()
+                        ninja.index = 0
+                        kunai.active = 1
+                        kunai.newpos = kunai.rect.move(ninja.rect.center)
+                        kunai.direction = ninja.get_dir()
+                        if kunai.direction:
+                            kunai.speed = -kunai.speed
+                            kunai.initial = 1
 
             elif event.type == MOUSEBUTTONDOWN:
                 #if fist.punch(chimp):
@@ -364,7 +587,7 @@ def main():
         allsprites.update()
 
         #Draw Everything
-        background.fill((255, 255, 255))
+        background.fill((0, 0, 0))
         screen.blit(background, (0, 0))
         allsprites.draw(screen)
         pygame.display.flip()
