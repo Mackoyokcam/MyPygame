@@ -1,83 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main.py" line="896" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="06d24686-2a4a-4743-866a-46f97a842e68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/Kunai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/Swoosh_Rope_Whip_075.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/Whoosh_Cloth_Leather_Fight_174.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/Whoosh_Rod_Pole_022.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/chinese_tileset/Chinese Temple.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/Kunai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__001.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__003.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__004.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__005.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__006.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__007.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/left/attack/Attack__009.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__001.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__003.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__004.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__005.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__006.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__007.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/attack/Attack__009.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__001.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__003.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__004.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__005.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__006.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__007.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jumping/Jump__009.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__000.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__001.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__003.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__004.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__005.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__006.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__007.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/throwing/Throw__009.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__000.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__000.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__001.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__001.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__002.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__002.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__003.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__003.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__004.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__004.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__005.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__005.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__006.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__006.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__007.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__007.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__008.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__008.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/dead/Dead__009.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/dead/Dead__009.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__000.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__000.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__001.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__001.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__002.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__002.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__003.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__003.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__004.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__004.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__005.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__005.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__006.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__006.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__007.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__007.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__008.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__008.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/idle/Idle__009.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/idle/Idle__009.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__000.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__000.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__001.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__001.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__002.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__002.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__003.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__003.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__004.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__004.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__005.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__005.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__006.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__006.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__007.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__007.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__008.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__008.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ninja/running/Run__009.png" afterPath="$PROJECT_DIR$/src/data/ninja/right/running/Run__009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/attack.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__000.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__002.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__003.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__004.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__005.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__006.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__007.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__008.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/dying/Dead__009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__000.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__002.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__003.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__004.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__005.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__006.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__007.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__008.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/cowboy/running/Run__009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/heart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/hit.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jump.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__000.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__002.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__003.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__004.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__005.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__006.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__007.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__008.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_attack/Jump_Attack__009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__000.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__002.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__003.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__004.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__005.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__006.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__007.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__008.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ninja/right/jump_throw/Jump_Throw__009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/throw.wav" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.py" afterPath="$PROJECT_DIR$/src/main.py" />
     </list>
@@ -93,7 +66,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MyPygame$main.coverage" NAME="main Coverage Results" MODIFIED="1461552039126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/MyPygame$main.coverage" NAME="main Coverage Results" MODIFIED="1461651533840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -107,10 +80,10 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="571" column="45" selection-start-line="571" selection-start-column="45" selection-end-line="571" selection-end-column="45" />
+            <state relative-caret-position="89">
+              <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
               <folding>
-                <element signature="e#259#271#0" expanded="true" />
+                <element signature="e#258#270#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -214,84 +187,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ninja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ninja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="right" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ninja" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="right" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jumping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -304,19 +199,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/data/ninja/right/jumping" />
-      <recent name="$PROJECT_DIR$/src/data" />
-      <recent name="$PROJECT_DIR$/src/data/ninja" />
-      <recent name="$PROJECT_DIR$/src/data/ninja/right/throw" />
-      <recent name="$PROJECT_DIR$/src/data/ninja/right/attack" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data/cowboy/running" />
       <recent name="$PROJECT_DIR$/src/data/ninja/right" />
       <recent name="$PROJECT_DIR$/src/data/ninja" />
       <recent name="$PROJECT_DIR$/src/data/ninja/left/attack" />
       <recent name="$PROJECT_DIR$/src/data/asteroids" />
-      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data" />
+      <recent name="$PROJECT_DIR$/src/data/cowboy/dying" />
+      <recent name="$PROJECT_DIR$/src/data/cowboy" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/data/ninja/right/jump_throw" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -569,6 +464,14 @@
       <option name="presentableId" value="Default" />
       <updated>1461103411939</updated>
     </task>
+    <task id="LOCAL-00001" summary="added ninja movements">
+      <created>1461552366617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1461552366617</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -606,9 +509,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added ninja movements" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ninja movements" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -618,7 +525,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#259#271#0" expanded="true" />
+            <element signature="e#258#270#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -628,7 +535,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#259#271#0" expanded="true" />
+            <element signature="e#258#270#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,7 +545,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#259#271#0" expanded="true" />
+            <element signature="e#258#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#258#270#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,12 +643,13 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/tomas-arad-heart.svg" />
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="571" column="45" selection-start-line="571" selection-start-column="45" selection-end-line="571" selection-end-column="45" />
+        <state relative-caret-position="89">
+          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
           <folding>
-            <element signature="e#259#271#0" expanded="true" />
+            <element signature="e#258#270#0" expanded="true" />
           </folding>
         </state>
       </provider>
