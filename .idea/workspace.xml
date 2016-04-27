@@ -1,48 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main.py" line="1146" />
+    <bookmark url="file://$PROJECT_DIR$/src/main.py" line="1315" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06d24686-2a4a-4743-866a-46f97a842e68" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/dink.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (10).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (2).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (3).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (4).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (5).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (6).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (7).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (8).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/dying/Dead (9).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (2).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (3).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (4).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (5).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (6).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (7).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/jack/running/Run (8).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (10).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (2).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (3).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (4).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (5).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (6).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (7).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (8).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/dying/Dead (9).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (2).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (3).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (4).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (5).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (6).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (7).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot/running/Run (8).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/robot_dead.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Game Manual/Game Manual.odt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/game_over.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/grunt.wav" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/laugh.ogg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ugh.wav" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/gray/a10015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/large/red/a30015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/gray/a10015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/medium/red/a30015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/gray/a10015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/asteroids/small/red/a30015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/chimp.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/chinese_tileset/Chinese Temple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/data/fist.bmp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.py" afterPath="$PROJECT_DIR$/src/main.py" />
     </list>
@@ -58,7 +124,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MyPygame$main.coverage" NAME="main Coverage Results" MODIFIED="1461708303457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/MyPygame$main.coverage" NAME="main Coverage Results" MODIFIED="1461748400003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -72,8 +138,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="786" column="48" selection-start-line="786" selection-start-column="48" selection-end-line="786" selection-end-column="48" />
+            <state relative-caret-position="501">
+              <caret line="1182" column="36" selection-start-line="1182" selection-start-column="36" selection-end-line="1182" selection-end-column="36" />
               <folding>
                 <element signature="e#258#270#0" expanded="true" />
               </folding>
@@ -109,9 +175,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -138,6 +204,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,48 +256,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyPygame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dying" />
+              <option name="myItemId" value="Game Manual" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,21 +269,22 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///media/mackoy/79791ccc-48e5-4359-a628-0ec0b6dd77a5/WWU Projects/CS321/MyPygame/src/data/Kunai.png" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/data/jack/running" />
-      <recent name="$PROJECT_DIR$/src/data/jack/dying" />
-      <recent name="$PROJECT_DIR$/src/data" />
-      <recent name="$PROJECT_DIR$/src/data/robot/dying" />
-      <recent name="$PROJECT_DIR$/src/data/robot/running" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/data/cowboy/running" />
       <recent name="$PROJECT_DIR$/src/data/ninja/right" />
       <recent name="$PROJECT_DIR$/src/data/ninja" />
       <recent name="$PROJECT_DIR$/src/data/ninja/left/attack" />
       <recent name="$PROJECT_DIR$/src/data/asteroids" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data" />
+      <recent name="$PROJECT_DIR$/src/data/jack/running" />
+      <recent name="$PROJECT_DIR$/src/data/jack/dying" />
+      <recent name="$PROJECT_DIR$/src/data/robot/dying" />
+      <recent name="$PROJECT_DIR$/src/data/robot/running" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -518,11 +551,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461651731017</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working game! sorta again">
+      <created>1461708895617</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1461708895617</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -559,7 +599,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added ninja movements" />
     <MESSAGE value="working game! sorta" />
-    <option name="LAST_COMMIT_MESSAGE" value="working game! sorta" />
+    <MESSAGE value="working game! sorta again" />
+    <option name="LAST_COMMIT_MESSAGE" value="working game! sorta again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -628,6 +669,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#258#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/lib/python2.7/dist-packages/pygame/examples/chimp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -635,26 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30001.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30002.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30000.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30015.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30001.png" />
+    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30002.png" />
+    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30000.png" />
+    <entry file="file://$PROJECT_DIR$/src/data/asteroids/medium/red/a30015.png" />
     <entry file="file://$PROJECT_DIR$/src/data/ninja/right/idle/Idle__009.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -666,11 +701,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NinjaMoves.py" />
-    <entry file="file://$PROJECT_DIR$/src/data/chinese_tileset/Chinese Temple.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/chinese_tileset/Chinese Temple.png" />
     <entry file="file://$PROJECT_DIR$/src/data/ninja/left/attack/Attack__000.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -706,16 +737,16 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/tomas-arad-heart.svg" />
     <entry file="file://$PROJECT_DIR$/src/data/Kunai.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/tomas-arad-heart.svg" />
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="786" column="48" selection-start-line="786" selection-start-column="48" selection-end-line="786" selection-end-column="48" />
+        <state relative-caret-position="501">
+          <caret line="1182" column="36" selection-start-line="1182" selection-start-column="36" selection-end-line="1182" selection-end-column="36" />
           <folding>
             <element signature="e#258#270#0" expanded="true" />
           </folding>

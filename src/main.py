@@ -443,7 +443,7 @@ class Ninja(pygame.sprite.Sprite):
     def _dead(self):
         self.ani_speed -= 1
         if self.ani_speed == 0:
-            self.ani_speed = 5
+            self.ani_speed = 30
             self.index += 1
             if self.index >= len(self.dying):
                 self.dead = 1
@@ -542,6 +542,7 @@ class Cowboy(pygame.sprite.Sprite):
         self.hit = 0
         self.dead = 0
         self.reached_end = 0
+        self.give_score = 0
 
         if self.xlist[self.x] == -150:
             self.direction = 0
@@ -741,6 +742,7 @@ class Jack(pygame.sprite.Sprite):
         self.dead = 0
         self.reached_end = 0
         self.lives = lives
+        self.laugh_sound = load_sound('laugh.ogg')
 
         if self.xlist[self.x] == -150:
             self.direction = 0
@@ -765,6 +767,7 @@ class Jack(pygame.sprite.Sprite):
             if self.lives > 0:
                 self.death_timer -= 1
                 if self.death_timer <= 0:
+                    self.laugh_sound.play()
                     self.lives -= 1
                     self.dead = 0
                     self.hit = 0
@@ -811,128 +814,221 @@ class Jack(pygame.sprite.Sprite):
         self.rect = self.newpos
 
 
-class Asteroid(pygame.sprite.Sprite):
-    def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
-        screen = pygame.display.get_surface()
-        self.x = 200
-        self.y = 300
-        self.images = []
-        self.ani_speed = 5
-        self.images.append(load_image('asteroids/medium/red/a30001.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30002.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30003.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30004.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30005.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30006.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30007.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30008.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30009.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30010.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30011.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30012.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30013.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30014.png', -1))
-        self.images.append(load_image('asteroids/medium/red/a30015.png', -1))
-        self.index = len(self.images) - 1
-        self.move_x = 9
-        self.move_y = 5
-        self.area = screen.get_rect()
-        self.image, self.rect = self.images[self.index]
-        self.rect.topleft = 10, 10
-        self.rect = self.rect.move((200, 300))
-        self.moving = 0
+class Menu:
+    def __init__(self, screen, items, background_color=(0, 0, 0), font_color=(255, 0, 0)):
+        self.background_color = background_color
+        self.screen = screen
+        self.font = pygame.font.SysFont(None, 36)
+        self.clock = pygame.time.Clock()
+        self.items = []
+        self.rect1 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 - 15, 200, 50])
+        self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 100 - 15, 200, 50])
+        self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 200 - 15, 200, 50])
+        self.rect4 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 300 - 15, 200, 50])
+        self.tutorial = Tutorial(self.screen)
+        for item in items:
+            label = self.font.render(item, 1, font_color)
+            self.items.append(label)
 
-    def _travel(self):
-        newpos = self.rect.move((self.move_x, self.move_y))
-        if self.rect.left < self.area.left or \
-                        self.rect.right > self.area.right:
-            self.move_x = -self.move_x
-            newpos = self.rect.move((self.move_x, self.move_y))
-            self.image = pygame.transform.flip(self.image, 1, 0)
+    def run(self):
+        menu_loop = 1
+        while menu_loop:
+            self.clock.tick(100)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
 
-        self.ani_speed -= 1
-        if self.ani_speed == 0:
-            self.ani_speed = 5
-            self.index -= 1
-            if self.index < 0:
-                self.index = len(self.images) - 1
-            self.image, self.rect = self.images[self.index]
+                elif event.type == MOUSEBUTTONDOWN and self.rect1.collidepoint(pygame.mouse.get_pos()):
+                    menu_loop = 0
 
-        self.rect = newpos
+                elif event.type == MOUSEBUTTONDOWN and self.rect2.collidepoint(pygame.mouse.get_pos()):
+                    self.tutorial.run()
+                    self.tutorial = Tutorial(self.screen)
 
-# class Fist(pygame.sprite.Sprite):
-#     """moves a clenched fist on the screen, following the mouse"""
-#     def __init__(self):
-#         pygame.sprite.Sprite.__init__(self) #call Sprite initializer
-#         self.image, self.rect = load_image('fist.bmp', -1)
-#         self.punching = 0
-#
-#     def update(self):
-#         "move the fist based on the mouse position"
-#         pos = pygame.mouse.get_pos()
-#         self.rect.midtop = pos
-#         if self.punching:
-#             self.rect.move_ip(5, 10)
-#
-#     def punch(self, target):
-#         "returns true if the fist collides with the target"
-#         if not self.punching:
-#             self.punching = 1
-#             hitbox = self.rect.inflate(-5, -5)
-#             return hitbox.colliderect(target.rect)
-#
-#     def unpunch(self):
-#         "called to pull the fist back"
-#         self.punching = 0
+                elif event.type == MOUSEBUTTONDOWN and self.rect4.collidepoint(pygame.mouse.get_pos()):
+                    pygame.quit()
 
 
-# class Chimp(pygame.sprite.Sprite):
-#     """moves a monkey critter across the screen. it can spin the
-#        monkey when it is punched."""
-#     def __init__(self):
-#         pygame.sprite.Sprite.__init__(self) #call Sprite intializer
-#         self.image, self.rect = load_image('chimp.bmp', -1)
-#         screen = pygame.display.get_surface()
-#         self.area = screen.get_rect()
-#         self.rect.topleft = 10, 10
-#         self.move = 9
-#         self.dizzy = 0
-#
-#     def update(self):
-#         "walk or spin, depending on the monkeys state"
-#         if self.dizzy:
-#             self._spin()
-#         else:
-#             self._walk()
-#
-#     def _walk(self):
-#         "move the monkey across the screen, and turn act the ends"
-#         newpos = self.rect.move((self.move, 0))
-#         if self.rect.left < 0 or \
-#             self.rect.right > self.area.right:
-#             self.move = -self.move
-#             newpos = self.rect.move((self.move, 0))
-#             self.image = pygame.transform.flip(self.image, 1, 0)
-#         self.rect = newpos
-#
-#     def _spin(self):
-#         "spin the monkey image"
-#         center = self.rect.center
-#         self.dizzy = self.dizzy + 12
-#         if self.dizzy >= 360:
-#             self.dizzy = 0
-#             self.image = self.original
-#         else:
-#             rotate = pygame.transform.rotate
-#             self.image = rotate(self.original, self.dizzy)
-#         self.rect = self.image.get_rect(center=center)
-#
-#     def punched(self):
-#         "this will cause the monkey to start spinning"
-#         if not self.dizzy:
-#             self.dizzy = 1
-#             self.original = self.image
+            self.screen.fill(self.background_color)
+            y = 400
+            count = 0
+            self.rect1 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y - 15, 200, 50])
+            self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 100 - 15, 200, 50])
+            self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 200 - 15, 200, 50])
+            self.rect4 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 300 - 15, 200, 50])
+            for label in self.items:
+                self.screen.blit(label, (750, y+count))
+                count += 100
+            pygame.display.flip()
+
+
+class Tutorial:
+    def __init__(self, screen, background_color=(0, 0, 0)):
+        self.background_color = background_color
+        self.screen = screen
+        self.font = pygame.font.SysFont(None, 36)
+        self.clock = pygame.time.Clock()
+        self.ninja = Ninja()
+        self.kunai = Kunai()
+        self.step = 0
+        self.texts = ['Press the left or right arrow keys to move left or right.',
+                      'Press the up or down arrow keys to switch lanes.',
+                      'Press A to attack with the katana.',
+                      'Press S to throw a kunai',
+                      'Hit ESC to return to the main menu.']
+        self.allsprites = pygame.sprite.RenderPlain(self.ninja)
+        self.text = self.font.render(self.texts[self.step], 1, (0, 250, 0))
+        self.textpos = self.text.get_rect(centerx=screen.get_width() / 2)
+
+    def run(self):
+        tutorial_loop = 1
+        while tutorial_loop:
+            self.clock.tick(100)
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+
+                elif event.type == KEYDOWN and event.key == K_ESCAPE:
+                    tutorial_loop = 0
+
+                elif event.type == KEYDOWN and event.key == K_RIGHT:
+                    if self.step == 0:
+                        self.step = 1
+                    if not self.ninja.dead:
+                        self.ninja.moving = 1
+                        if self.ninja.direction == 1:
+                            self.ninja.move = -self.ninja.move
+                        self.ninja.direction = 0
+                elif event.type == KEYUP and event.key == K_RIGHT:
+                    if self.step == 0:
+                        self.step = 1
+                    if self.ninja.moving and self.ninja.direction == 1:
+                        self.ninja.moving = 1
+                    else:
+                        self.ninja.moving = 0
+
+                elif event.type == KEYDOWN and event.key == K_LEFT:
+                    if self.step == 0:
+                        self.step = 1
+                    if not self.ninja.dead:
+                        self.ninja.moving = 1
+                        if self.ninja.direction == 0:
+                            self.ninja.move = -self.ninja.move
+                        self.ninja.direction = 1
+
+                elif event.type == KEYUP and event.key == K_LEFT:
+                    if self.step == 0:
+                        self.step = 1
+                    if self.ninja.moving and self.ninja.direction == 0:
+                        self.ninja.moving = 1
+                    else:
+                        self.ninja.moving = 0
+
+                elif event.type == KEYDOWN and event.key == K_UP:
+                    if self.step == 1:
+                        self.step = 2
+                    if not self.ninja.dead and self.ninja.default > 249:
+                        if not self.ninja.attacked and not self.ninja.jumped and not self.ninja.thrown:
+                            self.ninja.ani_speed = 5
+                            self.ninja.up = 1
+                            self.ninja.initial = 1
+                            self.ninja.jumped = 1
+                            self.ninja.jump()
+                            self.ninja.index = 0
+
+                elif event.type == KEYDOWN and event.key == K_DOWN:
+                    if self.step == 1:
+                        self.step = 2
+                    if not self.ninja.dead and self.ninja.default < 550:
+                        if not self.ninja.attacked and not self.ninja.jumped and not self.ninja.thrown:
+                            self.ninja.ani_speed = 5
+                            self.ninja.down = 1
+                            self.ninja.jump_y = -self.ninja.jump_y
+                            self.ninja.initial = 1
+                            self.ninja.jumped = 1
+                            self.ninja.jump()
+                            self.ninja.index = 0
+
+                elif event.type == KEYDOWN and event.key == K_a:
+                    if self.step == 2:
+                        self.step = 3
+                    if not self.ninja.dead:
+                        if not self.ninja.attacked and not self.ninja.thrown:
+                            self.ninja.attacked = 1
+                            self.ninja.attack()
+
+                elif event.type == KEYDOWN and event.key == K_s:
+                    if self.step == 3:
+                        self.step = 4
+                    if not self.ninja.dead:
+                        if not self.ninja.thrown and not self.kunai.active and not self.ninja.attacked:
+                            self.kunai.add(self.allsprites)
+                            self.kunai.rect = self.kunai.default
+                            self.ninja.thrown = 1
+                            self.kunai.active = 1
+                            self.kunai.newpos = self.kunai.rect.move(self.ninja.rect.center)
+                            self.kunai.direction = self.ninja.get_dir()
+                            if self.kunai.direction:
+                                self.kunai.speed = -self.kunai.speed
+                                self.kunai.initial = 1
+
+            self.text = self.font.render(self.texts[self.step], 1, (0, 250, 0))
+            self.screen.fill(self.background_color)
+            self.screen.blit(self.text, self.textpos)
+            self.allsprites.update()
+            self.allsprites.draw(self.screen)
+
+            pygame.display.flip()
+
+
+class GameOver:
+    def __init__(self, screen, background_color=(0, 0, 0), font_color=(0, 250, 0)):
+        self.background_color = background_color
+        self.screen = screen
+        self.font = pygame.font.SysFont(None, 36)
+        self.clock = pygame.time.Clock()
+        self.options = ['Retry', 'Main Menu', 'Quit']
+        self.items = []
+        self.rect1 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 - 15, 200, 50])
+        self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 + 100 - 15, 200, 50])
+        self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 + 200 - 15, 200, 50])
+        for item in self.options:
+            label = self.font.render(item, 1, font_color)
+            self.items.append(label)
+
+    def run(self, score, prev_score):
+        menu_loop = 1
+        new_score = self.font.render("Your score: %d" % score, 1, (0, 0, 255))
+        old_score = self.font.render("Your previous score: %d" % prev_score, 1, (0, 0, 255))
+        while menu_loop:
+            self.clock.tick(100)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+
+                elif event.type == MOUSEBUTTONDOWN and self.rect1.collidepoint(pygame.mouse.get_pos()):
+                    return 1
+
+                elif event.type == MOUSEBUTTONDOWN and self.rect2.collidepoint(pygame.mouse.get_pos()):
+                    return 2
+
+                elif event.type == MOUSEBUTTONDOWN and self.rect3.collidepoint(pygame.mouse.get_pos()):
+                    return 3
+
+            self.screen.fill(self.background_color)
+            y = 400
+            count = 0
+            self.rect1 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y - 15, 200, 50])
+            self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 100 - 15, 200, 50])
+            self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 200 - 15, 200, 50])
+            for label in self.items:
+                self.screen.blit(label, (750, y + count))
+                count += 100
+            self.screen.blit(new_score, (700, 200))
+            if prev_score != 0:
+                self.screen.blit(old_score, (700, 300))
+            pygame.display.flip()
 
 def main():
     """this function is called when the program starts.
@@ -941,6 +1037,10 @@ def main():
 #Initialize Everything
     pygame.init()
     screen = pygame.display.set_mode((1500, 800))
+    pygame.display.set_caption('Game Menu')
+    menu_items = ('Start', 'Tutorial', 'About', 'Quit')
+    gm = Menu(screen, menu_items)
+    gm.run()
     pygame.display.set_caption('Ninja vs Cowboy, Robot and Jack-O-Lantern')
     pygame.mouse.set_visible(0)
 
@@ -951,9 +1051,11 @@ def main():
 
 
 #Put Text On The Background, Centered
+    score = 0
+    prev_score = 0
     if pygame.font:
         font = pygame.font.Font(None, 36)
-        text = font.render("Cowboy Kills", 1, (0, 0, 255))
+        text = font.render("Score: %d" % (score), 1, (0, 0, 255))
         textpos = text.get_rect(centerx=background.get_width()/2)
         background.blit(text, textpos)
 
@@ -967,6 +1069,8 @@ def main():
     lives = 0
 
 #Prepare Game Objects
+    timer = 0
+    game_over = False
     red = (255, 0, 0)
     green = (0, 255, 0)
     blue = (0, 0, 255)
@@ -979,6 +1083,9 @@ def main():
     music = load_music("ninja.mp3")
     dink_sound = load_sound('dink.wav')
     robot_sound = load_sound('robot_dead.wav')
+    grunt_sound = load_sound('grunt.wav')
+    gameover_sound = load_sound('game_over.wav')
+    ugh_sound = load_sound('ugh.wav')
     health1 = Heart(10, 10)
     health2 = Heart(70, 10)
     health3 = Heart(130, 10)
@@ -987,6 +1094,7 @@ def main():
     robot = Robot(1)
     jack = Jack(0)
     cowboy = Cowboy(1)
+    go = GameOver(screen, (0, 0, 0))
     allsprites = pygame.sprite.RenderPlain((ninja, health1, health2, health3, cowboy, robot, jack))
 
     pygame.mixer.music.play(-1)
@@ -994,10 +1102,43 @@ def main():
 #Main Loop
     going = True
     while going:
+        if game_over:
+            if timer > 0:
+                timer -= 1
+            else:
+                result = go.run(score, prev_score)
+                if result == 1 or result == 2:
+                    if result == 2:
+                        gm.run()
+
+                    speed = 1
+                    health = 1
+                    lives = 0
+                    health1 = Heart(10, 10)
+                    health2 = Heart(70, 10)
+                    health3 = Heart(130, 10)
+                    ninja = Ninja()
+                    kunai = Kunai()
+                    robot = Robot(1)
+                    jack = Jack(0)
+                    cowboy = Cowboy(1)
+                    allsprites = pygame.sprite.RenderPlain((ninja, health1, health2, health3, cowboy, robot, jack))
+                    prev_score = score
+                    score = 0
+                    game_over = False
+                    pygame.mouse.set_visible(0)
+                    pygame.mixer.music.play(-1)
+
+                else:
+                    going = False
+
         clock.tick(100)
+        if timer > 0:
+            timer -= 1
 
         if cowboy.kunai_hit:
             punch_sound.play()
+            grunt_sound.play()
             cowboy.kunai_hit = 0
 
         if robot.kunai_hit:
@@ -1013,37 +1154,59 @@ def main():
             jack.kunai_hit = 0
 
         if cowboy.reached_end or jack.reached_end or robot.reached_end:
-            cowboy.kill()
-            robot.kill()
-            jack.kill()
-            if lives > 2:
-                lives /= 2
-            if health > 2:
-                health /= 2
-            if speed > 2:
-                speed /= 2
+            if not game_over:
+                cowboy.kill()
+                robot.kill()
+                jack.kill()
+                if lives > 2:
+                    lives /= 2
+                if health > 2:
+                    health /= 2
+                if speed > 2:
+                    speed /= 2
 
-            if health3.alive():
-                health3.kill()
-            elif health2.alive():
-                health2.kill()
-            elif health1.alive():
-                health1.kill()
-            else:
-                print("Game Over!")
-                ninja.dead = 1
+                cowboy = Cowboy(speed)
+                robot = Robot(health)
+                jack = Jack(lives)
+                cowboy.add(allsprites)
+                robot.add(allsprites)
+                jack.add(allsprites)
 
-        if not cowboy.alive():
+                if health3.alive():
+                    health3.kill()
+                    ugh_sound.play()
+                elif health2.alive():
+                    health2.kill()
+                    ugh_sound.play()
+                elif health1.alive():
+                    health1.kill()
+                    ugh_sound.play()
+                else:
+                    print("Game Over!")
+                    cowboy.move = 0
+                    robot.move = 0
+                    jack.move = 0
+                    gameover_sound.play()
+                    pygame.mixer.music.stop()
+                    game_over = True
+                    timer = 500
+                    ninja.dead = 1
+                    pygame.mouse.set_visible(1)
+
+        if not cowboy.alive() and not game_over and timer <= 0:
+            score += 50
             if speed < 10.1:
                 speed += 0.2
             cowboy = Cowboy(speed)
             cowboy.add(allsprites)
-        if not robot.alive():
+        if not robot.alive() and not game_over and timer <= 0:
+            score += 50
             if health < 10.1:
                 health += 0.2
             robot = Robot(health)
             robot.add(allsprites)
-        if not jack.alive():
+        if not jack.alive() and not game_over and timer <= 0:
+            score += 50
             if lives < 10:
                 lives += 0.2
             jack = Jack(lives)
@@ -1111,6 +1274,7 @@ def main():
                         if ninja.JA_counter == 0:
                             if ninja.hit(cowboy) and not cowboy.hit:
                                 punch_sound.play()
+                                grunt_sound.play()
                                 cowboy.hit = 1
                             elif ninja.hit(robot) and not robot.a_hit:
                                 punch_sound.play()
@@ -1139,7 +1303,12 @@ def main():
                             kunai.speed = -kunai.speed
                             kunai.initial = 1
 
+            #if game_over and timer < 0:
+
+
         allsprites.update()
+
+        text = font.render("Score: %d" % (score), 1, (0, 0, 255))
 
         #Draw Everything
         background.fill((0, 0, 0))
@@ -1151,6 +1320,7 @@ def main():
         #pygame.draw.rect(screen, green, ninja.rect.inflate(100, 0))
         #pygame.draw.rect(screen, blue, cowboy.rect.inflate(150, 0))
         allsprites.draw(screen)
+        screen.blit(text, textpos)
         pygame.display.flip()
 
     pygame.quit()
