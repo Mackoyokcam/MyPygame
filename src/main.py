@@ -827,6 +827,7 @@ class Menu:
         self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 200 - 15, 200, 50])
         self.rect4 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 300 - 15, 200, 50])
         self.tutorial = Tutorial(self.screen)
+        self.about = About(self.screen)
         for item in items:
             label = self.font.render(item, 1, font_color)
             self.items.append(label)
@@ -845,6 +846,9 @@ class Menu:
                 elif event.type == MOUSEBUTTONDOWN and self.rect2.collidepoint(pygame.mouse.get_pos()):
                     self.tutorial.run()
                     self.tutorial = Tutorial(self.screen)
+
+                elif event.type == MOUSEBUTTONDOWN and self.rect3.collidepoint(pygame.mouse.get_pos()):
+                    self.about.run()
 
                 elif event.type == MOUSEBUTTONDOWN and self.rect4.collidepoint(pygame.mouse.get_pos()):
                     pygame.quit()
@@ -990,6 +994,31 @@ class Tutorial:
             self.allsprites.update()
             self.allsprites.draw(self.screen)
 
+            pygame.display.flip()
+
+
+class About:
+    def __init__(self, screen, background_color=(0, 0, 0), font_color=(255, 0, 0)):
+        self.screen = screen
+        self.background_color = background_color
+        self.font = pygame.font.SysFont(None, 36)
+        self.clock = pygame.time.Clock()
+        self.items = []
+
+    def run(self):
+        about_loop = 1
+        while about_loop:
+            self.clock.tick(100)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+
+                elif event.type == KEYDOWN and event.key == K_ESCAPE:
+                    about_loop = 0
+
+            self.screen.fill(self.background_color)
+            y = 400
+            count = 0
             pygame.display.flip()
 
 
@@ -1152,6 +1181,7 @@ def main():
                     score = 0
                     game_over = False
                     pygame.mouse.set_visible(0)
+                    pygame.mixer.music.rewind()
                     pygame.mixer.music.play(-1)
 
                 else:
@@ -1207,7 +1237,6 @@ def main():
                     health1.kill()
                     ugh_sound.play()
                 else:
-                    print("Game Over!")
                     cowboy.move = 0
                     robot.move = 0
                     jack.move = 0
@@ -1330,6 +1359,7 @@ def main():
             elif event.type == KEYDOWN and event.key == K_F1:
                 options = ['Continue', 'Main Menu', 'Quit']
                 pygame.mouse.set_visible(1)
+                pygame.mixer.music.pause()
                 result = go.run(-1, 0, options)
                 if result == 2:
                     gm.run()
@@ -1349,9 +1379,12 @@ def main():
                     score = 0
                     game_over = False
                     pygame.mouse.set_visible(0)
+                    pygame.mixer.music.rewind()
                     pygame.mixer.music.play(-1)
                 elif result == 3:
                     going = False
+
+                pygame.mixer.music.play(-1)
 
             #if game_over and timer < 0:
 
@@ -1359,6 +1392,7 @@ def main():
         allsprites.update()
 
         text = font.render("Score: %d" % (score), 1, (0, 0, 255))
+        menu = font.render("F1: Pause/Menu", 1, (0, 0, 255))
 
         #Draw Everything
         background.fill((0, 0, 0))
@@ -1371,6 +1405,7 @@ def main():
         #pygame.draw.rect(screen, blue, cowboy.rect.inflate(150, 0))
         allsprites.draw(screen)
         screen.blit(text, textpos)
+        screen.blit(menu, (textpos.centerx + 400, textpos.top))
         pygame.display.flip()
 
     pygame.quit()
