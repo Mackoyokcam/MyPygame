@@ -6,9 +6,9 @@ Note there are comments here, but for the full explanation,
 follow along in the tutorial.
 """
 
-#Import Modules
-import numpy
-import os, pygame
+# Import Modules
+import os
+import pygame
 import random
 from pygame.locals import *
 from pygame.compat import geterror
@@ -19,8 +19,8 @@ if not pygame.mixer: print ('Warning, sound disabled')
 main_dir = os.path.split(os.path.abspath(__file__))[0]
 data_dir = os.path.join(main_dir, 'data')
 
+# functions to create our resources
 
-#functions to create our resources
 def load_image(name, colorkey=None):
     fullname = os.path.join(data_dir, name)
     try:
@@ -65,12 +65,12 @@ def load_music(name):
     return music
 
 
-#classes for our game objects
+# classes for our game objects
 class Kunai(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image, self.rect = load_image('Kunai.png')
-        self.default = self.rect
+        self.default = self.rect  # Base floor
         self.rect = self.rect.move((-80, 0))
         self.newpos = 0
         self.direction = 0
@@ -676,7 +676,6 @@ class Robot(pygame.sprite.Sprite):
             self.index += 1
             if self.index >= len(self.dying):
                 self.dead = 1
-                #self.a_hit = 0
                 self.sound_hit = 1
                 self.index = len(self.dying) - 1
             self.image, self.rect = self.dying[self.index]
@@ -1004,6 +1003,18 @@ class About:
         self.font = pygame.font.SysFont(None, 36)
         self.clock = pygame.time.Clock()
         self.items = []
+        self.intro = ['Welcome to Ninjavenge!',
+                      'Ninjavenge is a lane-defense game where you fight three different NPCs',
+                      'whose difficulty increases as you kill them. You control Ren, the last ninja',
+                      'of the Otaku clan. His home was raided by cowboys, robots, and jack-o-lanterns.',
+                      'The goal is to help Ren avenge his destroyed home as much as possible.',
+                      'Eliminate as many foes transiting the roads from and to your home. Each one that',
+                      'passes by, alerts the others and takes away a health point from Ren.',
+                      'Stop them at all costs!']
+        self.menu = self.font.render('Press ESC to go back to the main menu.', 1, font_color)
+        for item in self.intro:
+            label = self.font.render(item, 1, font_color)
+            self.items.append(label)
 
     def run(self):
         about_loop = 1
@@ -1019,6 +1030,17 @@ class About:
             self.screen.fill(self.background_color)
             y = 400
             count = 0
+            for label in self.items:
+                position = label.get_rect()
+                position.centerx = self.screen.get_rect().centerx
+                position.centery = 300 + count
+                self.screen.blit(label, position)
+                count += 30
+            position = self.menu.get_rect()
+            position.centerx = self.screen.get_rect().centerx
+            position.centery = 500 + count
+            self.screen.blit(self.menu, position)
+
             pygame.display.flip()
 
 
@@ -1094,7 +1116,7 @@ def main():
     menu_items = ('Start', 'Tutorial', 'About', 'Quit')
     gm = Menu(screen, menu_items)
     gm.run()
-    pygame.display.set_caption('Ninja vs Cowboy, Robot and Jack-O-Lantern')
+    pygame.display.set_caption('Ninjavenge')
     pygame.mouse.set_visible(0)
 
 #Create The Backgound
@@ -1125,10 +1147,7 @@ def main():
     timer = 0
     game_over = False
     red = (255, 0, 0)
-    green = (0, 255, 0)
-    blue = (0, 0, 255)
     clock = pygame.time.Clock()
-    whiff_sound = load_sound('whiff.wav')
     punch_sound = load_sound('punch.wav')
     attack_sound = load_sound('attack.wav')
     throw_sound = load_sound('throw.wav')
@@ -1156,15 +1175,16 @@ def main():
     going = True
     while going:
         if game_over:
+            # Go through timer...
             if timer > 0:
                 timer -= 1
-            else:
+            else: # Bring up the sub-menu
                 options = ['Retry', 'Main Menu', 'Quit']
                 result = go.run(score, prev_score, options)
                 if result == 1 or result == 2:
                     if result == 2:
                         gm.run()
-
+                    # Reset the game
                     speed = 1
                     health = 1
                     lives = 0
@@ -1184,7 +1204,7 @@ def main():
                     pygame.mixer.music.rewind()
                     pygame.mixer.music.play(-1)
 
-                else:
+                else: # Quit game
                     going = False
 
         clock.tick(100)
@@ -1196,10 +1216,12 @@ def main():
             grunt_sound.play()
             cowboy.kunai_hit = 0
 
+        # Robot immune to kunai
         if robot.kunai_hit:
             dink_sound.play()
             robot.kunai_hit = 0
 
+        # Robot dies
         if robot.sound_hit:
             robot_sound.play()
             robot.sound_hit = 0
@@ -1208,11 +1230,13 @@ def main():
             punch_sound.play()
             jack.kunai_hit = 0
 
+        # reset NPCs after reaching end. Subtract a health point.
         if cowboy.reached_end or jack.reached_end or robot.reached_end:
             if not game_over:
                 cowboy.kill()
                 robot.kill()
                 jack.kill()
+                # lessen difficulty by half
                 if lives > 2:
                     lives /= 2
                 if health > 2:
@@ -1236,7 +1260,7 @@ def main():
                 elif health1.alive():
                     health1.kill()
                     ugh_sound.play()
-                else:
+                else:  # Dead
                     cowboy.move = 0
                     robot.move = 0
                     jack.move = 0
@@ -1247,6 +1271,7 @@ def main():
                     ninja.dead = 1
                     pygame.mouse.set_visible(1)
 
+        # Respawn enemies with higher difficulty
         if not cowboy.alive() and not game_over and timer <= 0:
             score += 50
             if speed < 10.1:
@@ -1384,6 +1409,7 @@ def main():
                 elif result == 3:
                     going = False
 
+                pygame.mouse.set_visible(0)
                 pygame.mixer.music.play(-1)
 
             #if game_over and timer < 0:
@@ -1401,8 +1427,6 @@ def main():
         pygame.draw.rect(screen, red, [0, 550, 1500, 10])
         pygame.draw.rect(screen, red, [0, 400, 1500, 10])
         pygame.draw.rect(screen, red, [0, 250, 1500, 10])
-        #pygame.draw.rect(screen, green, ninja.rect.inflate(100, 0))
-        #pygame.draw.rect(screen, blue, cowboy.rect.inflate(150, 0))
         allsprites.draw(screen)
         screen.blit(text, textpos)
         screen.blit(menu, (textpos.centerx + 400, textpos.top))
