@@ -8,7 +8,7 @@ follow along in the tutorial.
 
 #Import Modules
 import numpy
-import os, pygame, glob
+import os, pygame
 import random
 from pygame.locals import *
 from pygame.compat import geterror
@@ -18,6 +18,7 @@ if not pygame.mixer: print ('Warning, sound disabled')
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
 data_dir = os.path.join(main_dir, 'data')
+
 
 #functions to create our resources
 def load_image(name, colorkey=None):
@@ -34,8 +35,8 @@ def load_image(name, colorkey=None):
         image.set_colorkey(colorkey, RLEACCEL)
     return image, image.get_rect()
 
-def load_sound(name):
 
+def load_sound(name):
     class NoneSound:
         def play(self): pass
     if not pygame.mixer or not pygame.mixer.get_init():
@@ -47,6 +48,7 @@ def load_sound(name):
         print ('Cannot load sound: %s' % fullname)
         raise SystemExit(str(geterror()))
     return sound
+
 
 def load_music(name):
     class NoneSound:
@@ -61,6 +63,7 @@ def load_music(name):
         print ('Cannot load sound: %s' % fullname)
         raise SystemExit(str(geterror()))
     return music
+
 
 #classes for our game objects
 class Kunai(pygame.sprite.Sprite):
@@ -115,7 +118,6 @@ class Kunai(pygame.sprite.Sprite):
         self.rect = self.newpos
 
     def _hit(self):
-        hit = True
         if not self.direction:
             hitpoint = self.rect.midright
 
@@ -251,12 +253,11 @@ class Ninja(pygame.sprite.Sprite):
         self.jump_throw.append(load_image('ninja/right/jump_throw/Jump_Throw__007.png', -1))
         self.jump_throw.append(load_image('ninja/right/jump_throw/Jump_Throw__008.png', -1))
         self.jump_throw.append(load_image('ninja/right/jump_throw/Jump_Throw__009.png', -1))
-
-
         self.index = 0
         self.move = 5
         self.jump_y = 8
         self.jump_height = 10
+
         #States
         self.moving = 0
         self.attacked = 0
@@ -826,6 +827,7 @@ class Menu:
         self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 200 - 15, 200, 50])
         self.rect4 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 400 + 300 - 15, 200, 50])
         self.tutorial = Tutorial(self.screen)
+        self.about = About(self.screen)
         for item in items:
             label = self.font.render(item, 1, font_color)
             self.items.append(label)
@@ -845,6 +847,9 @@ class Menu:
                     self.tutorial.run()
                     self.tutorial = Tutorial(self.screen)
 
+                elif event.type == MOUSEBUTTONDOWN and self.rect3.collidepoint(pygame.mouse.get_pos()):
+                    self.about.run()
+
                 elif event.type == MOUSEBUTTONDOWN and self.rect4.collidepoint(pygame.mouse.get_pos()):
                     pygame.quit()
 
@@ -857,7 +862,10 @@ class Menu:
             self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 200 - 15, 200, 50])
             self.rect4 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 300 - 15, 200, 50])
             for label in self.items:
-                self.screen.blit(label, (750, y+count))
+                position = label.get_rect()
+                position.centerx = self.rect1.centerx
+                position.centery = 410 + count
+                self.screen.blit(label, position)
                 count += 100
             pygame.display.flip()
 
@@ -879,6 +887,9 @@ class Tutorial:
         self.allsprites = pygame.sprite.RenderPlain(self.ninja)
         self.text = self.font.render(self.texts[self.step], 1, (0, 250, 0))
         self.textpos = self.text.get_rect(centerx=screen.get_width() / 2)
+        self.attack_sound = load_sound('attack.wav')
+        self.throw_sound = load_sound('throw.wav')
+        self.jump_sound = load_sound('jump.wav')
 
     def run(self):
         tutorial_loop = 1
@@ -936,6 +947,7 @@ class Tutorial:
                             self.ninja.jumped = 1
                             self.ninja.jump()
                             self.ninja.index = 0
+                            self.jump_sound.play()
 
                 elif event.type == KEYDOWN and event.key == K_DOWN:
                     if self.step == 1:
@@ -949,6 +961,7 @@ class Tutorial:
                             self.ninja.jumped = 1
                             self.ninja.jump()
                             self.ninja.index = 0
+                            self.jump_sound.play()
 
                 elif event.type == KEYDOWN and event.key == K_a:
                     if self.step == 2:
@@ -957,6 +970,7 @@ class Tutorial:
                         if not self.ninja.attacked and not self.ninja.thrown:
                             self.ninja.attacked = 1
                             self.ninja.attack()
+                            self.attack_sound.play()
 
                 elif event.type == KEYDOWN and event.key == K_s:
                     if self.step == 3:
@@ -969,35 +983,64 @@ class Tutorial:
                             self.kunai.active = 1
                             self.kunai.newpos = self.kunai.rect.move(self.ninja.rect.center)
                             self.kunai.direction = self.ninja.get_dir()
+                            self.throw_sound.play()
                             if self.kunai.direction:
                                 self.kunai.speed = -self.kunai.speed
                                 self.kunai.initial = 1
 
             self.text = self.font.render(self.texts[self.step], 1, (0, 250, 0))
             self.screen.fill(self.background_color)
-            self.screen.blit(self.text, self.textpos)
+            self.screen.blit(self.text, (400, 100))
             self.allsprites.update()
             self.allsprites.draw(self.screen)
 
             pygame.display.flip()
 
 
+class About:
+    def __init__(self, screen, background_color=(0, 0, 0), font_color=(255, 0, 0)):
+        self.screen = screen
+        self.background_color = background_color
+        self.font = pygame.font.SysFont(None, 36)
+        self.clock = pygame.time.Clock()
+        self.items = []
+
+    def run(self):
+        about_loop = 1
+        while about_loop:
+            self.clock.tick(100)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+
+                elif event.type == KEYDOWN and event.key == K_ESCAPE:
+                    about_loop = 0
+
+            self.screen.fill(self.background_color)
+            y = 400
+            count = 0
+            pygame.display.flip()
+
+
 class GameOver:
-    def __init__(self, screen, background_color=(0, 0, 0), font_color=(0, 250, 0)):
+    def __init__(self, screen, background_color=(0, 0, 0), font_color=(255, 0, 0)):
         self.background_color = background_color
         self.screen = screen
         self.font = pygame.font.SysFont(None, 36)
+        self.font_color = font_color
         self.clock = pygame.time.Clock()
-        self.options = ['Retry', 'Main Menu', 'Quit']
+        self.options = []
         self.items = []
         self.rect1 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 - 15, 200, 50])
         self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 + 100 - 15, 200, 50])
         self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, 300 + 200 - 15, 200, 50])
-        for item in self.options:
-            label = self.font.render(item, 1, font_color)
-            self.items.append(label)
 
-    def run(self, score, prev_score):
+    def run(self, score, prev_score, options):
+        self.items = []
+        self.options = options
+        for item in self.options:
+            label = self.font.render(item, 1, self.font_color)
+            self.items.append(label)
         menu_loop = 1
         new_score = self.font.render("Your score: %d" % score, 1, (0, 0, 255))
         old_score = self.font.render("Your previous score: %d" % prev_score, 1, (0, 0, 255))
@@ -1023,11 +1066,21 @@ class GameOver:
             self.rect2 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 100 - 15, 200, 50])
             self.rect3 = pygame.draw.rect(self.screen, (0, 200, 0), [680, y + 200 - 15, 200, 50])
             for label in self.items:
-                self.screen.blit(label, (750, y + count))
+                position = label.get_rect()
+                position.centerx = self.rect1.centerx
+                position.centery = 410 + count
+                self.screen.blit(label, position)
                 count += 100
-            self.screen.blit(new_score, (700, 200))
+            if score != -1:
+                position = new_score.get_rect()
+                position.centerx = self.rect1.centerx
+                position.centery = 200
+                self.screen.blit(new_score, position)
             if prev_score != 0:
-                self.screen.blit(old_score, (700, 300))
+                position = old_score.get_rect()
+                position.centerx = self.rect1.centerx
+                position.centery = 300
+                self.screen.blit(old_score, position)
             pygame.display.flip()
 
 def main():
@@ -1106,7 +1159,8 @@ def main():
             if timer > 0:
                 timer -= 1
             else:
-                result = go.run(score, prev_score)
+                options = ['Retry', 'Main Menu', 'Quit']
+                result = go.run(score, prev_score, options)
                 if result == 1 or result == 2:
                     if result == 2:
                         gm.run()
@@ -1127,6 +1181,7 @@ def main():
                     score = 0
                     game_over = False
                     pygame.mouse.set_visible(0)
+                    pygame.mixer.music.rewind()
                     pygame.mixer.music.play(-1)
 
                 else:
@@ -1182,7 +1237,6 @@ def main():
                     health1.kill()
                     ugh_sound.play()
                 else:
-                    print("Game Over!")
                     cowboy.move = 0
                     robot.move = 0
                     jack.move = 0
@@ -1302,6 +1356,35 @@ def main():
                         if kunai.direction:
                             kunai.speed = -kunai.speed
                             kunai.initial = 1
+            elif event.type == KEYDOWN and event.key == K_F1:
+                options = ['Continue', 'Main Menu', 'Quit']
+                pygame.mouse.set_visible(1)
+                pygame.mixer.music.pause()
+                result = go.run(-1, 0, options)
+                if result == 2:
+                    gm.run()
+                    speed = 1
+                    health = 1
+                    lives = 0
+                    health1 = Heart(10, 10)
+                    health2 = Heart(70, 10)
+                    health3 = Heart(130, 10)
+                    ninja = Ninja()
+                    kunai = Kunai()
+                    robot = Robot(1)
+                    jack = Jack(0)
+                    cowboy = Cowboy(1)
+                    allsprites = pygame.sprite.RenderPlain((ninja, health1, health2, health3, cowboy, robot, jack))
+                    prev_score = score
+                    score = 0
+                    game_over = False
+                    pygame.mouse.set_visible(0)
+                    pygame.mixer.music.rewind()
+                    pygame.mixer.music.play(-1)
+                elif result == 3:
+                    going = False
+
+                pygame.mixer.music.play(-1)
 
             #if game_over and timer < 0:
 
@@ -1309,6 +1392,7 @@ def main():
         allsprites.update()
 
         text = font.render("Score: %d" % (score), 1, (0, 0, 255))
+        menu = font.render("F1: Pause/Menu", 1, (0, 0, 255))
 
         #Draw Everything
         background.fill((0, 0, 0))
@@ -1321,6 +1405,7 @@ def main():
         #pygame.draw.rect(screen, blue, cowboy.rect.inflate(150, 0))
         allsprites.draw(screen)
         screen.blit(text, textpos)
+        screen.blit(menu, (textpos.centerx + 400, textpos.top))
         pygame.display.flip()
 
     pygame.quit()
